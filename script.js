@@ -50,19 +50,66 @@ let friendFavorites = [
 
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Pasta" would be.
 
+//This will print a word if any of it's letters is an 'a'.
+console.log("ANY WORDS WITH AN 'A' IN THEM.");
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[i].includes("a")){
+    console.log(friendFavorites[i] + " has an 'a' in the name.");
+  }
+}
 
+//This will print a word in the index solely if it has an 'a' in it, excluding words that only end with an 'a'.
+//I didn't know if capitalized "A's" counted so I implemented that filter just in case.
+console.log("ANY WORDS WITH AN 'A' IN THEM, EXCLUDING WORDS THAT ONLY START/END IN AN 'A'.");
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[i].includes("a")){
+    let temp = friendFavorites[i];
+
+    if (temp[0] != ("a", "A") && temp[temp.length - 1] != "a"){
+      console.log(friendFavorites[i] + " has an 'a' INSIDE the name.");
+    }
+  }
+}
 
 // 6. Store the result in an array called foodsWithA. Print out the array.
 
+let foodsWithA = [];
 
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[i].includes("a")){
+    let temp = friendFavorites[i];
+
+    if (temp[0] != ("a", "A") && temp[temp.length - 1] != "a"){
+      foodsWithA.push(temp);
+    }
+  }
+}
+
+console.log(foodsWithA);
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
 
+let longFoodNames = []
 
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[i].length > 6){
+    longFoodNames.push(friendFavorites[i]);
+  }
+}
+
+console.log(longFoodNames);
 
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
 
+let shortFoodNames = []
 
+for (let i = 0; i < friendFavorites.length; i++){
+  if (friendFavorites[i].length <= 6){
+    shortFoodNames.push(friendFavorites[i]);
+  }
+}
+
+console.log(shortFoodNames);
 
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
