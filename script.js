@@ -1,14 +1,18 @@
 console.log("Hello World!");
 // 1. Create an array called favoriteFoods with at least 6 foods you love.
 
+//My favoriteFoods array.
 let favoriteFoods = ["Pizza", "Zaxby's", "Chipotle", "McDonald's", "Pozole", "Tamales"]
+
+
 
 // 2. Loop through the list and print: "One of my favorite foods is ______."
 
-
+//Loops through every index of favoriteFoods and prints it as my favorite food.
 for (let i = favoriteFoods.length; i > 0; i--){
   console.log("One of my favorite foods is " + favoriteFoods[i-1]  + ".");
 }
+
 
 
 // 3. Print out the rating for each food with a ranking like:
@@ -16,7 +20,7 @@ for (let i = favoriteFoods.length; i > 0; i--){
 // "My #2 favorite food is Sushi"
 // ...etc.
 
-
+//Prints my favorite foods in ranking order.
 console.log("My #1 favorite food is " + favoriteFoods[0]);
 console.log("My #2 favorite food is " + favoriteFoods[1]);
 console.log("My #3 favorite food is " + favoriteFoods[2]);
@@ -25,42 +29,47 @@ console.log("My #5 favorite food is " + favoriteFoods[4]);
 console.log("My #6 favorite food is " + favoriteFoods[5]);
 
 
+
 // 4a. Create a function printFoodRecommendation(foodName) that prints out the following for the foodName provided
     // "Have you ever tried ____?"
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
 
+//My function that asks questions about the value inputed.
 function printFoodRecommendation(foodName) {
   console.log("Have you ever tried " + foodName + "?");
   console.log("I always recommend " + foodName + " to friends.");
   console.log("Trust me — " + foodName + " is delicious.");
 }
 
-
 // 4b. Call the function at least 3 times
 
+//Calling the function I created above.
 printFoodRecommendation("Menudo")
 printFoodRecommendation("Pozole")
 printFoodRecommendation("Tamales")
+
+
 
 // Here's a list of 50 friends' favorite foods:
 let friendFavorites = [
     "Pizza", "Sushi", "Pasta", "Falafel", "Burgers", "Ramen", "Pad Thai", "Curry", "Pho", "Nachos", "Gnocchi", "Donuts", "Steak", "Lasagna", "Biryani", "Tacos", "Croissant", "Churros", "Fried Rice", "Shawarma", "Miso Soup", "BBQ Ribs", "Hotpot", "Enchiladas", "Baklava", "Gyros", "Hummus", "Empanadas", "Pancakes", "Muffins", "Samosas", "Macarons", "Quiche", "Pierogi", "Arepas", "Okonomiyaki", "Ceviche", "Brisket", "Bao Buns", "Poutine", "Clam Chowder", "Fajitas", "Canelé", "Kimchi", "Tamales", "Omelette", "Biscuits", "Tempura", "Spring Rolls", "Crepes"
   ];
 
+
+
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Pasta" would be.
 
-//This will print a word if any of it's letters is an 'a'.
-console.log("ANY WORDS WITH AN 'A' IN THEM.");
+//This will print a word if any of it's letters has an 'a'.
+console.log("ANY WORDS WITH AN 'a' IN THEM.");
 for (let i = 0; i < friendFavorites.length; i++){
   if (friendFavorites[i].includes("a")){
     console.log(friendFavorites[i] + " has an 'a' in the name.");
   }
 }
-
-//This will print a word in the index solely if it has an 'a' in it, excluding words that only end with an 'a'.
-//I didn't know if capitalized "A's" counted so I implemented that filter just in case.
-console.log("ANY WORDS WITH AN 'A' IN THEM, EXCLUDING WORDS THAT ONLY START/END IN AN 'A'.");
+//This will print a word in the index solely if it has an 'a' inside of it, excluding words that only start/end with an 'a'.
+// I didn't know if capitalized "A's" counted so I implemented that filter just in case.
+console.log("ANY WORDS WITH AN 'a' IN THEM, EXCLUDING WORDS THAT ONLY START/END IN AN 'A'.");
 for (let i = 0; i < friendFavorites.length; i++){
   if (friendFavorites[i].includes("a")){
     let temp = friendFavorites[i];
@@ -71,24 +80,28 @@ for (let i = 0; i < friendFavorites.length; i++){
   }
 }
 
+
+
 // 6. Store the result in an array called foodsWithA. Print out the array.
 
+//This stores the words that have an 'a' inside of them by updating the array every time the if statement condition is met, which means that the current word has an 'a' inside of it. Prints after finding all words that meet the condition.
 let foodsWithA = [];
 
 for (let i = 0; i < friendFavorites.length; i++){
   if (friendFavorites[i].includes("a")){
     let temp = friendFavorites[i];
 
-    if (temp[0] != ("a", "A") && temp[temp.length - 1] != "a"){
-      foodsWithA.push(temp);
-    }
+    foodsWithA.push(temp);
   }
 }
 
 console.log(foodsWithA);
 
+
+
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
 
+//This runs through each index and updates the longFoodNames array with names larger than 6 characters.
 let longFoodNames = []
 
 for (let i = 0; i < friendFavorites.length; i++){
@@ -99,8 +112,11 @@ for (let i = 0; i < friendFavorites.length; i++){
 
 console.log(longFoodNames);
 
+
+
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
 
+//This runs through each index and updates the shortFoodNames array with names shorter than or equal to 6 characters.
 let shortFoodNames = []
 
 for (let i = 0; i < friendFavorites.length; i++){
@@ -111,9 +127,41 @@ for (let i = 0; i < friendFavorites.length; i++){
 
 console.log(shortFoodNames);
 
+
+
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
+
+//Both arrays are printed and the longer list is revealed through comparison and an if statement.
+console.log("Short-named foods: " + shortFoodNames);
+console.log("Long-named foods: " + longFoodNames);
+if (shortFoodNames > longFoodNames){
+  console.log("There are more short-named foods.");
+}else {
+  console.log("There are more long-named foods.");
+}
+
 
 
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
+
+/*The following loop goes through each index of the friendFavorites list, then adds the current index to the end of the longestFoodName list if it is larger or of equal length to the previously added index.
+The console.log command then prints the last index of the longestFoodName list since the last one should be larger than the rest of the others.*/
+let longestFoodName = [""];
+
+for (let i = 1; i < friendFavorites.length; i++){
+  if (friendFavorites[i].length >= longestFoodName[longestFoodName.length - 1].length){
+    longestFoodName.push(friendFavorites[i]);
+  }
+}
+let numChar = longestFoodName[longestFoodName.length - 1].length
+
+console.log("The longest food name in the list is " + longestFoodName[longestFoodName.length - 1] + " with " + numChar + " characters.");
+
+//I noticed that 'clam chowder' has the same number of characters as spring rolls, so I made a loop to check what other indexes have an equal number of characters as the last one, then states that they have an equal amount of characters if so.
+for (i = 0; i < longestFoodName.length - 1; i++){
+  if (longestFoodName[i].length === longestFoodName[longestFoodName.length - 1].length){
+    console.log(longestFoodName[i] + " also has " + numChar + " characters.");
+  }
+}
